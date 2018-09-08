@@ -1,0 +1,88 @@
+express-generator ==》 生成express 项目的工具 ==》 脚手架工具
+
+express -hellp    ==》 查看express的帮助指令
+
+// 怎么生成项目？？？
+express 项目的名称       ==》 fcht
+express  fcht     ===》 创建 一些基本的文件
+
+cd fcht  ==》 进入到 fcht目录下面 
+
+npm install  ===》 安装项目的依赖 （express fcht生成的package.json中  依赖数组）
+
+npm start  ==> 启动 项目     浏览器访问  localhost:3000
+
+以后操作    
+1. 直接在 fcht中打开 cmd  
+2. npm start  ==> 启动 项目     浏览器访问  localhost:3000
+3. net start mongodb  ==> 启动数据库 
+
+
+
+
+
+/*
+ * 浏览器的请求    get | post 
+ * get   数据在地址上 （看见）
+ * 		不安全			
+ * 		数据量有限
+ * 
+ * post	数据 虚拟对象中（看不见）
+ * 		安全
+ * 		数据量没有限制
+ * 
+ * 路由：根据请求的方式和 请求的地址 ==》 找处理到中间件
+ * 
+ * 写路由
+ *  登录的请求
+ * 请求方式     请求地址        处理中间件
+ *  post      /login       匹配用户名和密码
+ * */
+
+
+express怎么获取浏览器发送的数据？？？
+
+     /index?username=输入的值
+get 方式数据在地址上  通过 request.query 获取 ==》 {username:"小明"}
+//                         获取指定内容  request.query.username
+// 地址上的数据  怎么获取 ？？？   通过 request.query获取
+
+post 方式的数据在 虚拟对象中  通过  request.body 获取   ==》 {username:"小明"}
+//                          获取指定内容  req.body.username
+
+
+项目操作数据库 mongodb  
+下载mongodb模块
+ 在项目的目录下   下载 mongodb
+ package.json  ==》 项目的依赖数组
+ 
+ --save 作用 把下载的模块  放置package.json的依赖数组中
+ npm install mongodb --save 
+ 
+ 
+ 
+ // 写的后台
+ 1. 确定请求（根据请求方式  请求地址  请求的数据）
+ //  1） 确定请求的方式 get | post  ==》    router.get||router.post
+ //  2） 确定请求的地址        app.js==》 app.use("/VueHeadler")  
+ //                   router.js ==》router.xxx("/xxxxx",function())
+ //  3） 确定请求的地址上的数据 ？action=xxx 
+ 					req.query.action 获取地请求地址上的action上的数据
+ 					// function(req,res){
+ 						if(req.query.action=="xxx"){
+ 								//请求确定
+ 						}
+ 					}
+ 					
+ 2. 编写处理逻辑  （操作数据库 ）
+ 3. 发送响应 （发送处理后结果）
+  // 按照 接口文档中 返回的数据的格式去  发送
+ 
+
+项目的数据库   
+统一使用    htData
+
+按照数据结构文档  去 添加 权限数据
+
+db.powers.insert({power:"系统管理",powerCode:1})
+db.powers.insert({power:"课程管理",powerCode:2})

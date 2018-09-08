@@ -1,0 +1,33 @@
+1. 整理内容（不用交）
+
+2. 写学员的列表请求 (模糊查询)
+    1） 模糊查询有3个
+    userName		模糊查询的学员的名称		
+	email		模糊查询的学员的邮箱		
+	phone		模糊查询的学员的手机号		
+
+     思路：使用if判断
+     var seletor={} //查询的条件
+     if(req.body.userName!=""){
+     	// 查询用户名的条件 
+     	seletor.userName=
+     }
+     if(req.body.email!=""){
+     	// 查询邮箱的条件 
+     	seletor.email=
+     } 
+     if(req.body.phone!=""){
+     	// 查询邮箱的条件 
+     	seletor.phone=
+     }
+     // 查询数据
+handler("find","查询的集合",seletor,function(){})
+
+3. 学员的冻结和解冻 
+// 冻结和解冻为1个请求  
+// 思路  ：把所有为性别为女的人的年龄改为18，结果截图
+// 1）查询  数据    2）修改
+// 冻结和解冻的思路   ==》1）查询 ==》 当前的状态   2) 修改 ==》 修改当前的状态
+// 注意  ： 用express 获取到的数据 的类型  ==》 string 
+//        数据库中   tokenId ==》 number 
+//      查询或修改的时候 把  获取的string类型的tokenId 变成 number类型 ,然后去操作 

@@ -1,0 +1,22 @@
+﻿1. 关于node说法正确的是（A） 
+A：nodejs是javascript的运行平台 	  B：nodejs是javascript的一个框架
+C：nodejs是一门关于javascript的语句  D：nodejs是javascript的一个类库
+
+2. 关于npm 下面说法正确的是（D）
+A：npm是node的版本管理工具          B：npm是node的包管理工具
+C：使用npm可以下载node              D：npm可以启动nodejs
+
+
+3.（多选） 下面使用npm 下载express框架语法正确的是（BA） 
+ A：npm down express                   B：npm install express
+ B：npm download express               D: npm install –g express     
+
+
+4、（多选）关于nodejs中可以暴露add函数的代码是(DC)
+A: exports=add                  B: module.exports=add 
+C: module.exports.add=add       D: exports.add=add
+
+
+5.（多选）node怎么运行当前目录下demo.js文件（BC）
+	A：node  run  demo       B： node  demo
+	C：node  demo.js          D:  node  install  demo

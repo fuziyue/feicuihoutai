@@ -1,0 +1,17 @@
+1.请画出浏览器和服务器交互的示意图
+
+2.（多选） 下面使用npm 下载express框架指令正确的是（） 
+ A：npm run express                  B：npm install express
+ B：npm download express             D: npm install –g express  
+
+3. （多选）下面在express发送响应的语句正确的是（） 
+A：res.end({“success”:”发送成功”})     B：res.send({“success”:”发送成功”})
+C：res.end(‘{“success”:”发送成功”}’) 	   D：res.end(‘{“success”:”发送成功”}’)
+
+
+4.在express中可以发送静态资源的中间件是（）
+	A : exoress.send()       B：express.public()   
+	C: express.redirect()     D：express.static()
+
+
+5.请用express框架搭建一个hello world服务器

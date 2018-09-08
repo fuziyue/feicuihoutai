@@ -1,0 +1,43 @@
+//		   1) 要知道当前的状态   ==》查询==》条件 req.qurey.tokenId
+		//         2）去改变  ==》修改
+		//				[{条件}，{$set:{isstate:!doc[0].isstate}}]
+		//                false==> !false ==> true
+			// 查询当前的状态
+			handler('find', "studentList", {
+				tokenId: parseInt(req.query.tokenId)
+			}, function(doc) { // doc 数组  [{tokenId  userName  isstate}]
+
+				if(doc.length == 0) {
+					res.send({
+						err: '失败，请从新操作'
+					})
+				} else {
+					var selector = [{
+							tokenId: parseInt(req.query.tokenId)
+						},
+						{
+							$set: {
+								isstate: !doc[0].isstate
+								// false  ==>  !false ==> true 
+								// ture  ==> !ture ==>false
+								// doc[0].isstate=="正常"？"冻结":"正常"
+							}
+						}
+					];
+					//修改
+					handler('update', 'studentList', selector, function(result) {
+						if(result.result.n == 1) {
+							res.send({
+								success: "操作成功"
+							})
+						} else {
+							res.send({
+								err: "操作失败"
+							})
+						}
+					})
+					
+
+				}
+
+			})

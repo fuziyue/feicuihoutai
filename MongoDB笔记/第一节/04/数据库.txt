@@ -1,0 +1,77 @@
+路径
+
+真实的路径    目录关系    04/进门考.txt
+
+虚拟的路径     服务器和 浏览器  交互的地址     www.baidu.com/index/user/info
+			前端  和  后端 定义的 共识   ==》 完成相应的功能
+			
+			后端    /index/user/info   ===》 返回 用户信息
+			前端    /index/user/info   ==> 请求数据  
+			
+			前端    =发送请求=》 后端
+			      《 =返回数据= 
+
+{
+  name:"小明",
+  age:"18",
+  ....
+}
+mongodb数据库  ==》 放置 类似 json对象的数据  ==》 bson 数据
+//   bson 是json数据扩展 （数据类型 data  二进制的数据  ....）
+
+html5 css3  ==》 h5 c3
+全称  mongodb数据库管理系统  ==》 管理着  mongodb的数据库
+数据库  database     db 
+   
+                            \|/  
+// mongodb数据库  ==》 集合（大米的 袋子）   ==》 文档 （大米 ==》bosn数据）
+//  文件夹                          文件                                   文件中的数据 （具体的代码）
+
+
+
+// mongodb数据库  ==》 集合（玉米的 袋子）   ==》 文档 （玉米 ==》bosn数据）
+
+
+
+
+{name:"aaa",age:18}
+{name:"ccc",age:20}
+{name:"ddd",age:19}
+{name:"eee",age:18}
+{name:"fff",age:16}
+
+
+一种  ： 一条一条放  db.user.insert({name:"aaa",age:18})
+
+二种  ： mongodb客户端可以执行js  ==》 for找的相应的数据  ==》db.user.insert() 
+ // 变成数组
+var arr=[
+	{name:"aaa",age:18},
+	{name:"ccc",age:20},
+	{name:"ddd",age:19},
+	{name:"eee",age:18},
+	{name:"fff",age:16}
+]
+// for 循环
+for(var i=0;i<arr.length;i++){
+	db.user.insert(arr[i])
+}
+
+
+index.js  ==》 项目的主文件
+router.js ==> 项目的路由文件
+
+
+
+
+
+
+数据库  ==》 存储数据的   ==》 类似与json形式的  bson的数据格式
+{key1:value1,key2:value2,key3:value3,key4:value4}
+
+key是不是随便写的？？？ 不是  ，有一个统一的规范     	ECMAScript
+开发团队  定义的
+
+每一条数据  都有一个 唯一的标识符==》 方便操作（用于增删改查操作 ）
+
+身份证号  ==》 唯一的

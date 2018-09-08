@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<h1>添加管理员</h1>
+		<form action="/VueHandler/AdminLoginAndRegHandler?action=add" method="post">
+			
+			<!-- 通过input  select 写       注意  name -->
+			<p>用户名： <input type="text" name="userName" /></p>
+			<p>姓名：<input type="text" name="turename" /></p>
+			<p>手机号： <input type="text" name="phone" /></p>
+			<p>密码：<input type="text" name="password" value="123456" /></p>
+			<p>权限：
+				<select name="powerCode">
+					<option value="1">系统管理员</option>
+					<option value="2">课程管理员</option>
+				</select>
+			</p>
+
+			<input type="submit" />
+		</form>
+
+	</body>
+
+</html>

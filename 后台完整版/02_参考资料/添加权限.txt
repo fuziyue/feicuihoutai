@@ -1,0 +1,18 @@
+添加权限数据
+
+在cmd命令行输入 
+mongo   回车
+use fchtdata 回车
+
+复制一下代码到命令行   回车
+
+var powerData = [
+{"powerCode": 1, "power": "系统管理员"},
+{"powerCode": 2, "power": "课程管理员"}
+];for (var i= 0,len=powerData.length;i<len;i++){
+  db.powers.insert({power:powerData[i].power,powerCode:powerData[i].powerCode})
+}
+
+这个可以关闭该cmd命令行
+
+刷新浏览器页面

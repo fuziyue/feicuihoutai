@@ -1,0 +1,16 @@
+1. 下面可以读取文件的方法是（A）
+A:readFile B:wirteFile C: unlink  D: read
+
+2. 下面可以创建服务器的模块是（B）
+
+A: fs B: http C:server D: zlib
+
+3. 下面可以操作文件的模块是（A）
+A: fs B: http C:server D: zlib
+
+4. 下面可以对文件写入数据的方法是（B）
+A:readFile B:wirteFile C: unlink  D: read
+
+5.（多选） 下面使用npm 下载express框架语法正确的是（B D） 
+ A：npm down express                   B：npm install express
+ C：npm download express               D: npm install –g express  

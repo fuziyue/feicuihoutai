@@ -1,0 +1,43 @@
+﻿添加课程分类的数据
+
+在cmd命令行输入 
+mongo   回车
+use fchtdata 回车
+
+复制一下代码到命令行   回车
+var classData = [
+{"sysId": 1, "fatherId": 0, "title": "移动开发"}, 
+{"sysId": 2, "fatherId": 0, "title": "前端开发"},
+{"sysId": 3,"fatherId": 0,"title": "后端开发"}, 
+{"sysId": 4, "fatherId": 1, "title": "应用开发"},
+{"sysId": 5, "fatherId": 1, "title": "移动框架"}, 
+{"sysId": 6,"fatherId": 2,"title": "前端基础"},
+{"sysId": 7, "fatherId": 2, "title": "前端进阶"},
+{"sysId": 8, "fatherId": 2, "title": "前端框架"},
+{"sysId": 9, "fatherId": 3, "title": "Python"}, 
+{"sysId": 10, "fatherId": 3, "title": "PHP"}, 
+{"sysId": 11, "fatherId": 3, "title": "ASP.NET"},
+{"sysId": 12,"fatherId": 4, "title": "ios"},
+{"sysId": 13, "fatherId": 4, "title": "Android"},
+{"sysId": 14, "fatherId": 5, "title": "Cordova"}, 
+{"sysId": 15, "fatherId": 5, "title": "iocon"},
+{"sysId": 16,"fatherId": 6, "title": "HTML"},
+{"sysId": 17, "fatherId": 6, "title": "CSS"},
+{"sysId": 18, "fatherId": 7, "title": "javaScript进阶"},
+{"sysId": 19, "fatherId": 7, "title": "CSS3"},
+{"sysId": 20, "fatherId": 7, "title": "HTML5"},
+{"sysId": 21, "fatherId": 8, "title": "jQurey"},
+{"sysId": 22, "fatherId": 8, "title": "ExtJS"},
+{"sysId": 23, "fatherId": 8, "title": "angular"}
+];for (var i = 0, len = classData.length; i < len; i++) {db.catalogList.insert({"fatherId": classData[i].fatherId, "sysId": classData[i].sysId, "title": classData[i].title})}
+
+
+这个可以关闭该cmd命令行
+
+刷新浏览器页面
+
+
+
+
+
+

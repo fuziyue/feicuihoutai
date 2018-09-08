@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/VueHandler/AdminHandler?action=update" method="post">
+   <p>tokenId <input type="text" name="tokenId" value="2"></p>
+   <p>姓名 <input type="text" name="turename"></p>
+   <p>手机号 <input type="text" name="phone"></p>
+    <p>密码： <input type="text" name="password" value="123456"></p>
+    <p>权限编码：<select name="powerCode" id="">
+        <option value="1">系统管理员</option>
+        <option value="2">课程管理员</option>
+    </select></p>
+    <input type="submit" value="提交">
+</form>
+
+
+
+</body>
+</html>

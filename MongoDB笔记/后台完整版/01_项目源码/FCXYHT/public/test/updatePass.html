@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>修改密码</h1>
+1. 获取 验证码  ==》 初始session信息  设置session
+2. 登录   ==》 给session信息具体赋值   用户名  密码   id
+3. 修改密码
+<form action="/VueHandler/AdminHandler?action=updatepass" method="post">
+    <p>旧密码：<input type="text" name="userPwd"></p>
+    <p>新密码：<input type="text" name="newPwd"></p>
+    <input type="submit" value="修改密码">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示管理员</title>
+</head>
+<body>
+<!--
+ get 方式 地址上的action属性 干掉  重新写 发送的数据
+-->
+<form action="/VueHandler/AdminHandler?action=usershow" method="post">
+    <input type="text" name="action" value="usershow">
+    <p>页数： <input type="text" name="pageStart" value="1"></p>
+    <input type="submit" value="查询">
+</form>
+</body>
+</html>

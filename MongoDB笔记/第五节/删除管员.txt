@@ -1,0 +1,65 @@
+// 处理管理员删除后的  tokenId的递归函数
+// req  请求对象
+// res 响应对象
+// data  处理的数据   [{}  {}  {} ]
+function reUpdate(req,res,data){
+	if(data.length==0){// 处理完成
+		res.send({success:"删除成功"})
+	}else{ // 处理  ==》 修改数据库
+		var selector =[
+			{userName:data[0].userName}, // 修改的条件
+			{
+				$inc:{ 
+					tokenId: -1 // 修改的内容
+				}
+			}
+		];
+		// 具体去修改
+		handler("update","administors",selector,function(result){
+			if(result.result.n==0){
+				res.send({err:"删除失败"})
+			}else{
+			     data.shift();// 删除第一项
+			     reUpdate(req,res,data); // 再次执行函数
+			}
+		})
+	}
+}
+
+
+ else if(req.query.action == "delete") { // 删除管理员的请求
+		// 1. 直接删除 浏览器传过来的  tokenId对应的数据
+		// 2. 找到 大于 删除的tokenId的数据
+		// 3. 处理这些数据  让他们的tokenId 都 -1 
+		// 4. 发送响应
+			handler("delete","administors",
+			{tokenId:parseInt(req.query.tokenId)},
+			function(result){
+				if(result.result.n==0){
+					res.send({err:"删除失败，请重新操作！！"})
+				}else{
+					// 删除成功
+					handler("find","administors",
+					{tokenId:{$gt:parseInt(req.query.tokenId)}},
+					function(data){
+						// data ==》 比删除的 tokenId大的数据    [{tokenId-1},{},{},{}]
+						// 通过  递归函数  处理   发送响应
+						//    req res  请求对象 和响应对响应
+						//     data 处理的数据
+						// 使用递归
+						reUpdate(req,res,data)
+						// function fn(){ 
+//							if(条件){ 
+//								结束
+//							}else{ 
+//								fn() 
+//							}  
+//						}
+//						
+						
+					})
+				}
+			})
+	
+	}else
+

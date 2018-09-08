@@ -1,0 +1,61 @@
+express-generator ==》 生成express 项目的工具 ==》 脚手架工具
+
+express -hellp    ==》 查看express的帮助指令
+
+// 怎么生成项目？？？
+express 项目的名称       ==》 fcht
+express  fcht     ===》 创建 一些基本的文件
+
+cd fcht  ==》 进入到 fcht目录下面 
+
+npm install  ===》 安装项目的依赖 （express fcht生成的package.json中  依赖数组）
+
+npm start  ==> 启动 项目     浏览器访问  localhost:3000
+
+以后操作    
+1. 直接在 fcht中打开 cmd  
+2. npm start  ==> 启动 项目     浏览器访问  localhost:3000
+
+
+
+
+
+
+/*
+ * 浏览器的请求    get | post 
+ * get   数据在地址上 （看见）
+ * 		不安全			
+ * 		数据量有限
+ * 
+ * post	数据 虚拟对象中（看不见）
+ * 		安全
+ * 		数据量没有限制
+ * 
+ * 路由：根据请求的方式和 请求的地址 ==》 找处理到中间件
+ * 
+ * 写路由
+ *  登录的请求
+ * 请求方式     请求地址        处理中间件
+ *  post      /login       匹配用户名和密码
+ * */
+
+
+express怎么获取浏览器发送的数据？？？
+
+     /index?username=输入的值
+get 方式数据在地址上  通过 request.query 获取 ==》 {username:"小明"}
+//                         获取指定内容  request.query.username
+// 地址上的数据  怎么获取 ？？？   通过 request.query获取
+
+post 方式的数据在 虚拟对象中  通过  request.body 获取   ==》 {username:"小明"}
+//                          获取指定内容  req.body.username
+
+
+项目操作数据库 mongodb  
+下载mongodb模块
+ 在项目的目录下   下载 mongodb
+ package.json  ==》 项目的依赖数组
+ 
+ --save 作用 把下载的模块  放置package.json的依赖数组中
+ npm install mongodb --save 
+

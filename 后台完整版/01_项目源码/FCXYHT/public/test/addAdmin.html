@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加管理员</title>
+</head>
+<body>
+<h1>添加管理员</h1>
+<form action="/VueHandler/AdminLoginAndRegHandler?action=add" method="post">
+    <!--name属性值 为 接口文档中的字段名称 -->
+<p>用户名： <input type="text" name="userName"></p>
+<p>姓名： <input type="text" name="turename"></p>
+<p>手机号： <input type="text" name="phone"></p>
+<p>密码： <input type="text" name="password" value="123456"></p>
+    <p>权限编码：<select name="powerCode" id="">
+        <option value="1">系统管理员</option>
+        <option value="2">课程管理员</option>
+    </select></p>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

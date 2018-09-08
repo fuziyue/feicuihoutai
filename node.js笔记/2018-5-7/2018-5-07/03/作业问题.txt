@@ -1,0 +1,7 @@
+function fn(path,"utf-8",callback){// 形参 表示意义 不表示具体的内容
+
+}
+fn("/index.js","utf-8")
+
+
+// 

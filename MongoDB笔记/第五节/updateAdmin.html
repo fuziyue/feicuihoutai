@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- updateAdmin.html-->
+		
+		<form action="/VueHandler/AdminHandler?action=update" method="post">
+			<p>tokenId：<input type="text" name="tokenId" /></p>
+			<p>姓名 : <input type="text" name="turename" /></p>
+			<p>手机号： <input type="text" name="phone" /></p>
+			<p>权限： <select name="powerCode" >
+				<option value="1">系统管理员</option>
+				<option value="2">课程管理员</option>
+				
+			</select></p>	
+			<input type="submit" value="修改" />
+		</form>
+		
+		
+	</body>
+</html>

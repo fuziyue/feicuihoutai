@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<!-- showAdmin-->
+		<h1>查询管理员列表</h1>
+		<form action="/VueHandler/AdminHandler?action=show" method="get">
+			<input type="text" name="action" value="show" />
+			<p>姓名：<input type="text" name="searchText" /></p>
+			<p>页数： <input type="text" name="pageStart" /></p>	
+			<input type="submit" value="查询" />
+			
+		</form>
+	</body>
+</html>

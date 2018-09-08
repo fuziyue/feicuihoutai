@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码测试</title>
+</head>
+<body>
+
+<div>验证码: <p id="veri"></p>
+
+
+    <input type="button" id="btn" value="获取验证码"></div>
+
+<form action='/VueHandler/AdminLoginAndRegHandler?action="checkVerification"' method="get">
+    <input type="text" name="action" value="checkVerification">
+    <p>验证码： <input type="text" name="veri"></p>
+    <input type="submit" value="提交">
+</form>
+<script>
+
+
+     // ajax 作用： 不用刷新浏览器  就能与后台进行数据交互
+
+
+
+
+
+
+           ///获取but按钮
+    document.getElementById("btn").onclick = function () {
+        getVeri(); //获取验证码
+    }
+     // 获取验证码的函数
+    function getVeri() {
+        //  创建一个 xmlhttp
+        var xmlhttp = new XMLHttpRequest();// ajax
+                     // 请求 请求地址    同步异步
+        xmlhttp.open("GET", "/VueHandler/AdminLoginAndRegHandler?action=verification", true);
+
+        xmlhttp.send(); //  发送
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("veri").innerHTML = xmlhttp.responseText;
+            }
+        }
+    }
+    getVeri()
+</script>
+
+</body>
+</html>

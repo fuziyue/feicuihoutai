@@ -1,0 +1,8 @@
+一：
+1、db.persons.find({$gt:18,$lt:28})
+2、db.persons.update({name:"张三"},{$set:{age:+1}},true)
+3、db.persons.remove({name:"李四"})
+4、db.persons.insert({id:1,name:"李四"，age:"18"})
+
+二：
+db.数据库名.update({修改的内容})

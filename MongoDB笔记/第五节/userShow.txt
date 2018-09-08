@@ -1,0 +1,67 @@
+	//  1. 查询所有数据  ==》 返回数据里面有 一共有多少条数
+			//  2. 设置查询的条件
+			//  3. 查询数据库
+			//  4. 返回数据
+			//获取学员列表的数据总数
+			handler("find", "studentList", null, function(arr) {
+
+				// 设置查询条件
+				var selector = {};
+				// 用户名||邮箱||手机号   不为 ""    || 或     &&  且
+				if(req.body.userName != "" || req.body.email != "" || req.body.phone != "") {
+					// 设置 模糊查询的条件
+					//              	"" ==> false
+					if(req.body.userName) {
+						selector.userName = {
+							$regex: '.*' + req.body.userName + '.*'
+						};
+						//   类似
+						//  {userName:{$regex: '.*' + req.body.userName + '.*'}
+					}
+					if(req.body.email) {
+						selector.email = {
+							$regex: '.*' + req.body.email + '.*'
+						};
+					}
+
+					if(req.body.phone) {
+						selector.phone = {
+							$regex: '.*' + req.body.phone + '.*'
+						};
+					}
+					
+//					selector={
+//						phone:{
+//							$regex: '.*' + req.body.phone + '.*'
+//						},
+//						userName:{
+//							$regex: '.*' + "" + '.*'
+//						}
+//					}
+					
+					
+				} else {
+					// 设置  按页数查询的条件
+					selector = {
+						tokenId: { $gt:3*(parseInt(req.body.pageStart))-3,$lte:3*(parseInt(req.body.pageStart)) }
+					};
+				}
+
+				//查询数据库获取结果集
+				handler("find", "studentList", selector, function(data) {
+					if(data.length == 0) {
+						res.send({
+							"err": "没有查询到数据"
+						});
+					} else {
+						res.send({
+							success: "成功",
+							data: {
+								pageSize: 3,
+								count: arr.length,
+								list: data
+							}
+						});
+					}
+				});
+			});
